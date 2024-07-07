@@ -72,9 +72,9 @@ tooltip label{
 #temperature,
 #workspaces,
 #backlight {
-    background: #1e1e2e;
+    background: #1e171acf;
     opacity: 0.8;
-    padding: 0px 10px;
+    padding: 0px 8px;
     margin: 3px 0px;
     margin-top: 10px;
     border: 0px;
@@ -132,4 +132,10 @@ tooltip label{
 #battery {
     color: #a6e3a1;
     border-left: 0px;
+}
+
+.custom-spotify {
+    padding: 0 10px;
+    margin: 0 4px;
+    color: #1DB954;
 }

@@ -6,12 +6,20 @@
     "passthrough": false,
     "gtk-layer-shell": true,
     "height": 50,
-    "modules-left": ["custom/launch_wofi","wlr/workspaces","cpu","memory","disk","hyprland/window"],
+    "modules-left": ["hyprland/workspaces", "custom/launch_wofi","wlr/workspaces","cpu","memory","disk", "custom/spotify"],
     "modules-center": ["custom/lock_screen","custom/updates","clock","custom/power_btn"],
     "modules-right": ["temperature","custom/power_profile","battery","backlight","pulseaudio","pulseaudio#microphone","tray","custom/weather","custom/light_dark"],
     
-    "hyprland/window": {
-        "format": "{}"
+    // "hyprland/window": {
+    //     "format": "{}"
+    // },
+    "custom/spotify": {
+    "exec": "/usr/bin/python3  ~/mediaplayer.py --player spotify",
+    "format": "{}  ",
+    "return-type": "json",
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous"
     },
 
     "custom/launch_wofi": {
@@ -86,6 +94,30 @@
             "8": [],
             "9": [],
             "10": []
+        }
+        
+    },
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate",
+        "format":" {icon} ",
+        "format-icons": {
+        "1": "零",
+        "2": "一",
+        "3": "二",
+        "4": "三",
+        "5": "四",
+        "6": "五"
+        },
+        "workspaces": {
+            "零": [],
+            "一": [],
+            "二": [],
+            "三": [],
+            "四": [],
+            "五": []
         }
     },
     
@@ -172,7 +204,7 @@
     
     "temperature": {
         "thermal-zone": 1,
-        "format": " {temperatureF}°F",
+        "format": " {temperatureC}°C",
         "critical-threshold": 70,
         "format-critical": " {temperatureC}°C",
         "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"

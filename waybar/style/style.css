@@ -133,3 +133,9 @@ tooltip label{
     color: #1d7715;
     border-left: 0px;
 }
+
+.custom-spotify {
+    padding: 0 10px;
+    margin: 0 4px;
+    color: #1DB954;
+}
